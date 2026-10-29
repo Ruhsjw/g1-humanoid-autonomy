@@ -1,0 +1,6 @@
+<launch>
+  <arg name="use_ekf" default="false"/>
+  <node pkg="soccer_robot" type="ball_kicker_yolo.py" name="ball_kicker_yolo" output="screen">
+    <remap if="$(arg use_ekf)" from="/global_position_2d_robot" to="/global_position_2d_ekf"/>
+  </node>
+</launch>

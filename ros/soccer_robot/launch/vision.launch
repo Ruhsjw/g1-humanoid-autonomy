@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="soccer_robot" type="robot_localizer.py" name="robot_localizer" output="screen"/>
+</launch>

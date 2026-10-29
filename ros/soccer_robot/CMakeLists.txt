@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.0.2)
+project(soccer_robot)
+find_package(catkin REQUIRED COMPONENTS cv_bridge geometry_msgs rospy sensor_msgs std_msgs tf unitree_legged_msgs message_generation)
+add_message_files(FILES Object.msg ObjectArray.msg)
+generate_messages(DEPENDENCIES std_msgs)
+catkin_package(CATKIN_DEPENDS message_runtime std_msgs)
+catkin_install_python(PROGRAMS scripts/robot_localizer.py scripts/vision_odom_ekf_localizer.py scripts/ball_kicker.py scripts/ball_kicker_yolo.py scripts/publish_true_positions.py DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+install(DIRECTORY launch DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})

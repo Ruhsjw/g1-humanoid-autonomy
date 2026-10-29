@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- 启动视觉定位节点 -->
+  <node name="robot_localizer" pkg="soccer_robot" type="robot_localizer.py" output="screen" />
+  
+  <!-- 启动视觉-里程计EKF融合定位节点 -->
+  <node name="vision_odom_ekf_localizer" pkg="soccer_robot" type="vision_odom_ekf_localizer.py" output="screen" />
+</launch> 
